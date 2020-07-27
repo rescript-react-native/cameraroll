@@ -12,30 +12,30 @@ version `x.y.*` of `@react-native-community/cameraroll`.
 
 ## Installation
 
-With `yarn`:
+When
+[`@react-native-community/cameraroll`](https://github.com/react-native-community/react-native-cameraroll)
+is properly installed & configured by following their installation instructions,
+you can install the bindings:
 
-```shell
+```console
+npm install @reason-react-native/cameraroll
+# or
 yarn add @reason-react-native/cameraroll
 ```
 
-With `npm`:
+`@reason-react-native/cameraroll` should be added to `bs-dependencies` in your
+`bsconfig.json`. Something like
 
-```shell
-npm install @reason-react-native/cameraroll
-```
-
-`@react-native-community/cameraroll` should be properly installed and linked.
-Please refer to the relevant
-[instructions](https://github.com/react-native-community/react-native-cameraroll/blob/master/README.md).
-
-Finally, `@reason-react-native/cameraroll` should be added to `bs-dependencies`
-in `BuckleScript` configuration of the project (`bsconfig.json`). For example,
-
-```json
+```diff
 {
-  ...
-  "bs-dependencies": ["reason-react", "reason-react-native", "@reason-react-native/cameraroll"],
-  ...
+  //...
+  "bs-dependencies": [
+    "reason-react",
+    "reason-react-native",
+    // ...
++    "@reason-react-native/cameraroll"
+  ],
+  //...
 }
 ```
 
