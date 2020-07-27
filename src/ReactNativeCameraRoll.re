@@ -43,6 +43,7 @@ external getPhotosParams:
     ~mimeTypes: array(string)=?,
     ~fromTime: float=?,
     ~toTime: float=?,
+    ~include_: array(string)=?,
     unit
   ) =>
   getPhotosParams;
@@ -58,12 +59,12 @@ and node = {
   location: Js.Nullable.t(location),
 }
 and image = {
-  filename: string,
+  filename: Js.Nullable.t(string),
   uri: string,
-  height: float,
-  width: float,
-  isStored: Js.Nullable.t(bool),
-  playableDuration: float,
+  height: Js.Nullable.t(float),
+  width: Js.Nullable.t(float),
+  fileSize: Js.Nullable.t(float),
+  playableDuration: Js.Nullable.t(float),
 }
 and location = {
   latitude: Js.Nullable.t(float),

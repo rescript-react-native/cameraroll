@@ -1,11 +1,11 @@
 {
   "name": "@reason-react-native/cameraroll",
-  "version": "1.5.0",
+  "version": "4.0.0",
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "@react-native-community/cameraroll": "^1.5.0"
+    "@react-native-community/cameraroll": "^4.0.0"
   },
   "repository": "https://github.com/reason-react-native/cameraroll.git",
   "author": "sgny (https://github.com/sgny)",
