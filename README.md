@@ -1,19 +1,21 @@
-# BuckleScript bindings to @react-native-community/cameraroll
+# `@reason-react-native/cameraroll`
 
 [![Build Status](https://github.com/reason-react-native/cameraroll/workflows/Build/badge.svg)](https://github.com/reason-react-native/cameraroll/actions)
-[![Version](https://img.shields.io/npm/v/@reason-react-native/cameraroll.svg)](https://www.npmjs.com/package/@reason-react-native/cameraroll)
+[![Version](https://img.shields.io/npm/v/@reason-react-native/cameraroll.svg)](https://www.npmjs.com/@reason-react-native/cameraroll)
+[![Chat](https://img.shields.io/discord/235176658175262720.svg?logo=discord&colorb=blue)](https://reason-react-native.github.io/discord/)
 
-These are complete BuckleScript bindings to
-[`@reason-react-native/cameraroll`](https://github.com/react-native-community/react-native-cameraroll),
-in Reason syntax.
+[ReScript](https://rescript-lang.org) / [Reason](https://reasonml.github.io) bindings for
+[`@react-native-community/cameraroll`](https://github.com/react-native-cameraroll/react-native-cameraroll).
 
-Version `x.y.z` of `@reason-react-native/cameraroll` should be compatible with
-version `x.y.*` of `@react-native-community/cameraroll`.
+Exposed as `ReactNativeCameraRoll` module.
+
+`@reason-react-native/cameraroll` X.y.\* means it's compatible with
+`@react-native-community/cameraroll` X.y.\*
 
 ## Installation
 
 When
-[`@react-native-community/cameraroll`](https://github.com/react-native-community/react-native-cameraroll)
+[`@react-native-community/cameraroll`](https://github.com/react-native-cameraroll/react-native-cameraroll)
 is properly installed & configured by following their installation instructions,
 you can install the bindings:
 
@@ -24,7 +26,7 @@ yarn add @reason-react-native/cameraroll
 ```
 
 `@reason-react-native/cameraroll` should be added to `bs-dependencies` in your
-`bsconfig.json`. Something like
+`bsconfig.json`:
 
 ```diff
 {
