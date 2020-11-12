@@ -10,7 +10,7 @@ type getAlbumsParams;
 
 [@bs.obj]
 external getAlbumsParams:
-  (~assetType: [@bs.string] [ | `All | `Photos | `Videos]) => getAlbumsParams;
+  (~assetType: [ | `All | `Photos | `Videos]) => getAlbumsParams;
 
 // multiple externals
 [@bs.module "@react-native-community/cameraroll"]
@@ -28,7 +28,7 @@ external getPhotosParams:
   (
     ~first: int,
     ~after: string=?,
-    ~groupTypes: [@bs.string] [
+    ~groupTypes: [
                    | `Album
                    | `All
                    | `Event
@@ -39,7 +39,7 @@ external getPhotosParams:
                  ]
                    =?,
     ~groupName: string=?,
-    ~assetType: [@bs.string] [ | `All | `Videos | `Photos]=?,
+    ~assetType: [ | `All | `Videos | `Photos]=?,
     ~mimeTypes: array(string)=?,
     ~fromTime: float=?,
     ~toTime: float=?,
@@ -92,8 +92,7 @@ type saveOptions;
 
 [@bs.obj]
 external saveOptions:
-  (~_type: [@bs.string] [ | `auto | `photo | `video], ~album: string) =>
-  saveOptions;
+  (~_type: [ | `auto | `photo | `video], ~album: string) => saveOptions;
 
 // multiple externals
 [@bs.module "@react-native-community/cameraroll"]
@@ -112,7 +111,7 @@ external saveToCameraRoll: string => Js.Promise.t(string) =
 // multiple externals
 [@bs.module "@react-native-community/cameraroll"]
 external saveToCameraRollWithType:
-  (string, ~_type: [@bs.string] [ | `photo | `video]) => Js.Promise.t(string) =
+  (string, ~_type: [ | `photo | `video]) => Js.Promise.t(string) =
   "saveToCameraRoll";
 
 [@bs.module "@react-native-community/cameraroll"]
