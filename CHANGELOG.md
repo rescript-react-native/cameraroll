@@ -1,5 +1,9 @@
 # Changelog of `@reason-react-native/cameraroll`
 
+## 4.0.1 - 2020-11-12
+
+rescript 8.2 compat
+
 ## 4.0.0 - 2020-07-27
 
 Upgrade to latest stable.
