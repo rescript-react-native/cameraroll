@@ -1,6 +1,6 @@
 {
   "name": "@reason-react-native/cameraroll",
-  "description": "ReScript bindings for @react-native-community/cameraroll",
+  "description": "ReScript bindings for @react-native-community/cameraroll.",
   "version": "4.0.2",
   "publishConfig": {
     "access": "public"
