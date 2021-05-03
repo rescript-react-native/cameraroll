@@ -1,5 +1,9 @@
 # Changelog of `@rescript-react-native/cameraroll`
 
+## 4.0.3 - 2021-05-03
+
+ReScript
+
 ## 4.0.2 - 2020-11-17
 
 - Fix npm description
