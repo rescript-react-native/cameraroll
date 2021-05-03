@@ -1,15 +1,15 @@
-# `@reason-react-native/cameraroll`
+# `@rescript-react-native/cameraroll`
 
-[![Build Status](https://github.com/reason-react-native/cameraroll/workflows/Build/badge.svg)](https://github.com/reason-react-native/cameraroll/actions)
-[![Version](https://img.shields.io/npm/v/@reason-react-native/cameraroll.svg)](https://www.npmjs.com/@reason-react-native/cameraroll)
-[![Chat](https://img.shields.io/discord/235176658175262720.svg?logo=discord&colorb=blue)](https://reason-react-native.github.io/discord/)
+[![Build Status](https://github.com/rescript-react-native/cameraroll/workflows/Build/badge.svg)](https://github.com/rescript-react-native/cameraroll/actions)
+[![Version](https://img.shields.io/npm/v/@rescript-react-native/cameraroll.svg)](https://www.npmjs.com/@rescript-react-native/cameraroll)
+[![ReScript Forum](https://img.shields.io/discourse/posts?color=e6484f&label=ReScript%20Forum&server=https%3A%2F%2Fforum.rescript-lang.org)](https://forum.rescript-lang.org/)
 
-[ReScript](https://rescript-lang.org) / [Reason](https://reasonml.github.io) bindings for
+[ReScript](https://rescript-lang.org) bindings for
 [`@react-native-community/cameraroll`](https://github.com/react-native-cameraroll/react-native-cameraroll).
 
 Exposed as `ReactNativeCameraRoll` module.
 
-`@reason-react-native/cameraroll` X.y.\* means it's compatible with
+`@rescript-react-native/cameraroll` X.y.\* means it's compatible with
 `@react-native-community/cameraroll` X.y.\*
 
 ## Installation
@@ -20,22 +20,22 @@ is properly installed & configured by following their installation instructions,
 you can install the bindings:
 
 ```console
-npm install @reason-react-native/cameraroll
+npm install @rescript-react-native/cameraroll
 # or
-yarn add @reason-react-native/cameraroll
+yarn add @rescript-react-native/cameraroll
 ```
 
-`@reason-react-native/cameraroll` should be added to `bs-dependencies` in your
+`@rescript-react-native/cameraroll` should be added to `bs-dependencies` in your
 `bsconfig.json`:
 
 ```diff
 {
   //...
   "bs-dependencies": [
-    "reason-react",
-    "reason-react-native",
+    "@rescript/react",
+    "rescript-react-native",
     // ...
-+    "@reason-react-native/cameraroll"
++    "@rescript-react-native/cameraroll"
   ],
   //...
 }
@@ -51,7 +51,7 @@ Allows saving photos and videos to the Camera Roll or Photo Gallery, similar to
 The function will return the URI for the saved file as a string wrapped in a
 Promise.
 
-```reason
+```rescript
 save: string => Js.Promise.t(string)
 ```
 
@@ -64,7 +64,7 @@ specified in a `saveOptions` object.
 The function will return the URI for the saved file as a string wrapped in a
 Promise.
 
-```reason
+```rescript
 saveWithOptions: (string, saveOptions) => Js.Promise.t(string)
 ```
 
@@ -84,7 +84,7 @@ will be inferred to be a video.
 The function will return the URI for the saved file as a string wrapped in a
 Promise.
 
-```reason
+```rescript
 saveToCameraRoll: string => Js.Promise.t(string)
 ```
 
@@ -97,7 +97,7 @@ one of the polymorphic variants `` `photo `` or `` `video ``.
 The function will return the URI for the saved file as a string wrapped in a
 Promise.
 
-```reason
+```rescript
 saveToCameraRollWithType: (string, [ | `photo | `video]) => Js.Promise.t(string)
 ```
 
@@ -116,7 +116,7 @@ and base64 data URIs) or a local video file URI. The user will be presented with
 a dialog box that showing the asset(s) and asked for confirmation. This cannot
 be bypassed as per Apple Developer guidelines.
 
-```reason
+```rescript
 deletePhotos: array(string) => Js.Promise.t(bool)
 ```
 
@@ -124,7 +124,7 @@ deletePhotos: array(string) => Js.Promise.t(bool)
 
 Returns a list of albums wrapped in a Promise.
 
-```reason
+```rescript
 getAlbums: unit => Js.Promise.t(array(album))
 ```
 
@@ -133,7 +133,7 @@ getAlbums: unit => Js.Promise.t(array(album))
 Returns a list of albums of type specified in a `getAlbumsParams` object,
 wrapped in a Promise.
 
-```reason
+```rescript
 getAlbums: getAlbumsParams => Js.Promise.t(array(album))
 ```
 
@@ -147,7 +147,7 @@ of type `array(photoIdentifier)`, where each `photoIdentifier` object would
 contain details of each photo or video matching parameters provided in the
 `getPhotosParam` object.
 
-```reason
+```rescript
 getPhotos: getPhotosParams => Js.Promise.t(photoIdentifiersPage)
 ```
 
@@ -155,7 +155,7 @@ getPhotos: getPhotosParams => Js.Promise.t(photoIdentifiersPage)
 
 ### `album`
 
-```reason
+```rescript
 type album = {
   title: string,
   count: int
@@ -166,7 +166,7 @@ type album = {
 
 can be constructed with the constructor of the same name
 
-```reason
+```rescript
 getAlbumsParams:
   (
     ~assetType: [@bs.string] [
@@ -188,7 +188,7 @@ can be constructed with the constructor of the same name
   returned in a previous `getPhotos` call, under the `end_cursor` key contained
   in turn under the `page_info` key.
 
-```reason
+```rescript
 getPhotosParams:
   (
     ~first: int,
@@ -215,7 +215,7 @@ getPhotosParams:
 
 ### `image`
 
-```reason
+```rescript
 type image = {
   filename: Js.Nullable.t(string),
   uri: string,
@@ -228,7 +228,7 @@ type image = {
 
 ### `location`
 
-```reason
+```rescript
 type location = {
   latitude: Js.Nullable.t(float),
   longitude: Js.Nullable.t(float),
@@ -240,7 +240,7 @@ type location = {
 
 ### `node`
 
-```reason
+```rescript
 type node = {
   [@bs.as "type"]
   _type: string,
@@ -254,7 +254,7 @@ type node = {
 
 ### `pageInfo`
 
-```reason
+```rescript
 type pageInfo = {
   [@bs.as "has_next_page"]
   hasNextPage: bool,
@@ -268,7 +268,7 @@ type pageInfo = {
 
 ### `photoIdentifiersPage`
 
-```reason
+```rescript
 type photoIdentifiersPage = {
   edges: array(photoIdentifier),
   [@bs.as "page_info"]
@@ -278,7 +278,7 @@ type photoIdentifiersPage = {
 
 ### `photoIdentifier`
 
-```reason
+```rescript
   type photoIdentifier = {node}
 ```
 
@@ -286,7 +286,7 @@ type photoIdentifiersPage = {
 
 can be constructed with the constructor of the same name
 
-```reason
+```rescript
 saveOptions:
   (
     ~_type: [@bs.string] [
@@ -301,7 +301,7 @@ saveOptions:
 
 ## Example
 
-```reason
+```rescript
 open ReactNative;
 open ReactNativeCameraRoll;
 
@@ -510,11 +510,11 @@ releases.
 ## Contribute
 
 Read the
-[contribution guidelines](https://github.com/reason-react-native/.github/blob/master/CONTRIBUTING.md)
+[contribution guidelines](https://github.com/rescript-react-native/.github/blob/master/CONTRIBUTING.md)
 before contributing.
 
 ## Code of Conduct
 
 We want this community to be friendly and respectful to each other. Please read
-[our full code of conduct](https://github.com/reason-react-native/.github/blob/master/CODE_OF_CONDUCT.md)
+[our full code of conduct](https://github.com/rescript-react-native/.github/blob/master/CODE_OF_CONDUCT.md)
 so that you can understand what actions will and will not be tolerated.

@@ -1,4 +1,4 @@
-# Changelog of `@reason-react-native/cameraroll`
+# Changelog of `@rescript-react-native/cameraroll`
 
 ## 4.0.2 - 2020-11-17
 

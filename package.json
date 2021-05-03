@@ -1,5 +1,5 @@
 {
-  "name": "@reason-react-native/cameraroll",
+  "name": "@rescript-react-native/cameraroll",
   "description": "ReScript bindings for @react-native-community/cameraroll.",
   "version": "4.0.2",
   "publishConfig": {
@@ -8,21 +8,19 @@
   "peerDependencies": {
     "@react-native-community/cameraroll": "^4.0.0"
   },
-  "repository": "https://github.com/reason-react-native/cameraroll.git",
+  "repository": "https://github.com/rescript-react-native/cameraroll.git",
   "author": "sgny (https://github.com/sgny)",
   "license": "MIT",
   "keywords": [
     "rescript",
-    "reason",
-    "reasonml",
-    "bucklescript",
     "react-native",
     "cameraroll"
   ],
   "files": [
     "*.md",
     "bsconfig.json",
-    "src/**/*.re",
+    "src/**/*.res",
+    "src/**/*.resi",
     "src/**/*.js",
     "!src/**/*.bs.js"
   ],
@@ -39,7 +37,7 @@
     "release": "npmpub"
   },
   "devDependencies": {
-    "bs-platform": "^8.2.0",
+    "bs-platform": "^9.0.0",
     "husky": "^4.0.0",
     "lint-staged": "^10.0.0",
     "npmpub": "^5.0.0",
