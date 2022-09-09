@@ -13,6 +13,7 @@
   },
   "repository": "https://github.com/rescript-react-native/cameraroll.git",
   "author": "sgny (https://github.com/sgny)",
+  "funding": "https://github.com/rescript-react-native/rescript-react-native?sponsor=1",
   "license": "MIT",
   "keywords": [
     "rescript",
