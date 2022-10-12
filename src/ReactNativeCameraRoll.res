@@ -45,10 +45,8 @@ external getPhotosParams: (
 
 type rec photoIdentifier = {node: node}
 and node = {
-  @as("type")
-  _type: string,
-  @as("group_name")
-  groupName: string,
+  \"type": string,
+  group_name: string,
   image: image,
   timestamp: float,
   location: Js.Nullable.t<location>,
@@ -71,16 +69,12 @@ and location = {
 
 type rec photoIdentifiersPage = {
   edges: array<photoIdentifier>,
-  @as("page_info")
-  pageInfo: pageInfo,
+  page_info: pageInfo,
 }
 and pageInfo = {
-  @as("has_next_page")
-  hasNextPage: bool,
-  @as("start_cursor")
-  startCursor: Js.Nullable.t<string>,
-  @as("end_curson")
-  endCursor: Js.Nullable.t<string>,
+  has_next_page: bool,
+  start_cursor: Js.Nullable.t<string>,
+  end_curson: Js.Nullable.t<string>,
 }
 
 type saveOptions

@@ -98,7 +98,7 @@ The function will return the URI for the saved file as a string wrapped in a
 Promise.
 
 ```rescript
-saveToCameraRollWithType: (string, [ | `photo | `video]) => Js.Promise.t(string)
+saveToCameraRollWithType: (string, [ | #photo | #video]) => Js.Promise.t(string)
 ```
 
 ### `deletePhotos`
@@ -169,10 +169,10 @@ can be constructed with the constructor of the same name
 ```rescript
 getAlbumsParams:
   (
-    ~assetType: [@bs.string] [
-                   | `All
-                   | `Photos
-                   | `Videos
+    ~assetType: [
+                   | #All
+                   | #Photos
+                   | #Videos
                  ]
   ) =>
   getAlbumsParams
@@ -193,18 +193,18 @@ getPhotosParams:
   (
     ~first: int,
     ~after: string=?,
-    ~groupTypes: [@bs.string] [
-                   | `Album
-                   | `All
-                   | `Event
-                   | `Faces
-                   | `Library
-                   | `PhotoStream
-                   | `SavedPhotos
+    ~groupTypes: [
+                   | #Album
+                   | #All
+                   | #Event
+                   | #Faces
+                   | #Library
+                   | #PhotoStream
+                   | #SavedPhotos
                  ]
                    =?,
     ~groupName: string=?,
-    ~assetType: [@bs.string] [ | `All | `Videos | `Photos]=?,
+    ~assetType: [ | #All | #Videos | #Photos]=?,
     ~mimeTypes: array(string)=?,
     ~fromTime: float=?,
     ~toTime: float=?,
@@ -242,10 +242,8 @@ type location = {
 
 ```rescript
 type node = {
-  [@bs.as "type"]
-  _type: string,
-  [@bs.as "group_name"]
-  groupName: string,
+  \"type": string,
+  \"group_name": string,
   image,
   timestamp: float,
   location: Js.Nullable.t(location),
@@ -256,12 +254,9 @@ type node = {
 
 ```rescript
 type pageInfo = {
-  [@bs.as "has_next_page"]
-  hasNextPage: bool,
-  [@bs.as "start_cursor"]
-  startCursor: Js.Nullable.t(string),
-  [@bs.as "end_curson"]
-  endCursor: Js.Nullable.t(string),
+  \"has_next_page": bool,
+  \"start_cursor": Js.Nullable.t(string),
+  \"end_curson": Js.Nullable.t(string),
 };
 
 ```
@@ -271,8 +266,7 @@ type pageInfo = {
 ```rescript
 type photoIdentifiersPage = {
   edges: array(photoIdentifier),
-  [@bs.as "page_info"]
-  pageInfo,
+  \"page_info",
 }
 ```
 
@@ -289,11 +283,11 @@ can be constructed with the constructor of the same name
 ```rescript
 saveOptions:
   (
-    ~_type: [@bs.string] [
-                   | `auto
-                   | `photo
-                   | `video
-                 ],
+    ~_type: [
+      | #auto
+      | #photo
+      | #video
+    ],
     ~album: string
   ) =>
   saveOptions
